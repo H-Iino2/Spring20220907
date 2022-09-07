@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<Head>
+		<meta charset= "utf-8" />
+		<meta name = "viewport" content = "width=devie-widht, initial-scale=1" />
+		<meta name = "description" content = "JavaScript ToDoアプリケーション 初めてのアプリケーション作成"/>
+		<title>タイトル</title>
+		<link rel = "stylesheet" href = "style.css" />
+		<script src = "todo.js" defer></script>
+	</Head>
+	
+	    <body>
+        <header>
+            <h1>クイズ</h1>
+        </header>
+        <main>
+        	<form action = "/" method = "post">
+				<p>問1：飯野の出身地はどこでしょう。</p>
+				<p th:text = "${result}"></p>
+				<input type = "radio" name = "q1" value =  "batu">北海道
+				<input type = "radio" name = "q1" value  = "batu">沖縄
+				<input type = "radio" name = "q1" value  = "maru">長野
+				</br>
+				<input type = "submit" value = "送信">
+
+			</form>
+			
+			
+			
+        </main>
+        
+        
+        <footer>
+        </footer>
+
+    </body>
+	
+	
+</html>
