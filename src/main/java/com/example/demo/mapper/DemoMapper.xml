@@ -3,10 +3,16 @@
 
 <mapper namespace = "com.example.demo.mapper.DemoMapper">
 
-	<select id = "selectItem" resultType ="String">
-		select test from demo2 where id = 1
+	<select id = "selectOneItem" resultType ="String">
+		select id from demo2 where id = 1
 	</select>
 	
+	<select id = "selectItem" resultType ="com.example.demo.model.DBModel">
+		select * from demo2
+	</select>
+	
+	
+		
 	<insert id = "insertItem" >
 		insert into demo2 (test)
 			values(
@@ -14,6 +20,17 @@
 			); 
 	</insert>
 	
+	<delete id = "deleteItem">
+		delete from demo2 where id = #{id} 
+	</delete>
+	
+	<select id = "selectUpdateItem" resultType = "com.example.demo.model.DBModel">
+		select * from demo2 where id = #{id}
+	</select>
+	
+	<update id = "updateItem">
+		update demo2 set test = #{test},kazu = #{kazu} where id = #{id}
+	</update>
 	
 	
 </mapper>

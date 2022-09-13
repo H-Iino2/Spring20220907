@@ -19,14 +19,33 @@
 				<input type = "submit" value = "送信">
 			</form>
 			
-			<ui>
-				<li></li>
+			
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>test</th>
+					<th>kazu</th>
+					<th>削除</th>
+					<th>更新</th>
+				</tr>
+					
 				
-				
-			</ui>
+
+					<tr th:each = "list:${lists}">
+						<!--<td><input type = "text" name = "id" th:value = "${list.id}"/> <td>-->
+						<td th:text="${list.id}"></td>
+						<td th:text = "${list.test}"></td>
+						<td th:text = "${list.kazu}"></td>
+						<form action = "#" th:action = "@{'/delete/'+ ${list.id}}" method = "post">
+						<td><input type = "submit" value = "delete"></td>
+						</form>	
+						<form action = "#" th:action = "@{'/update/' + ${list.id}}" method = "get">
+						<td><input type = "submit" value = "update"></td>
+						</form>
+					</tr>
+				</table>
 			
-			
-			
+		
         </main>
         
         
